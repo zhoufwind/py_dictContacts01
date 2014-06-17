@@ -24,13 +24,13 @@ while True:
 			if _name.count(_search) != 0:	# If name contains search, print user 
 				
 				_p = _name.find(_search)# High light search, create index position
-				print _name[:_p] + "\033[32;1m%s\033[0m" % _search + _name[_p + len(_search):], '\t'.join(_value)
+				print _name[:_p] + "\033[32;1m%s\033[0m" % _search + _name[_p + len(_search):] + '\t', '\t'.join(_value)
 
 				_info_counter += 1
 				continue		# if first loop cound user, STOP second loop, continue first loop!
 			for _i in _value:		# second layer loop
 				if _i.count(_search) != 0:
-					print _name,'\t'.join(_value)
+					print _name + '\t','\t'.join(_value)
 					_info_counter += 1
 		if _info_counter == 0:
 			print "No valid record..."
